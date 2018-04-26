@@ -8,7 +8,9 @@ var flc = {};
 	var isMobileDevice = false;
 
 	function activate() {
-		jQuery('.site-content').append('<div id="forsta-chat-container"></div>');
+		if(jQuery('.site-content') !== null)
+			jQuery('.site-content').append('<div id="forsta-chat-container"></div>');
+		else jQuery('body').append('<div id="forsta-chat-container"></div>');
 		jQuery('#forsta-chat-container').append('<style>.forsta-chat {position: fixed;bottom: 90px;right: 90px;z-index: 1000;}</style>');
 		jQuery('#forsta-chat-container').append('<style>.forsta-chat-btn { position: fixed;bottom: 20px;right: 20px;z-index: 1000;cursor: pointer;outline: none;}</style');
 		jQuery('#forsta-chat-container').append('<style>.rotated-image {-webkit-transform: rotate(360deg);transform: rotate(360deg);transition-duration: .5s;}</style');
