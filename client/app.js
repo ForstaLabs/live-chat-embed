@@ -24,6 +24,7 @@ var flc = {};
 			$('#forsta-chat-container').empty();
 			flc.initChat() 
 		});
+		initChat();
 	}
 
 	function initChat() {
