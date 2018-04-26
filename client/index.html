@@ -5,10 +5,11 @@
 <script type="text/javascript">
 	window.onload = function() {
 		flc.activate();
-		flc.initChat({
+		flc.options = {
 			openLogo: 'https://i.imgur.com/cir4X2q.png',
 			closeLogo: 'https://i.imgur.com/s96eWu3.png',
 			form: 'https://forsta-live-chat-embed.herokuapp.com/client/chat.html'
-		});
+		};
+		flc.initChat();
 	}
 </script>
