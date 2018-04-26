@@ -1,13 +1,16 @@
 <div id="forsta-chat-container"></div>
 
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../client/jquery.js"></script>
 <script type="text/javascript" src="../client/app.js"></script>
-<script>
-	initChat({
-		token: 'c1f3cf9fffdb06de01bfd97db86ec049a73b0a9b',
-		to: 'support:forsta.io',
-		userName: 'ChatUser',
-		openLogo: 'https://i.imgur.com/cir4X2q.png',
-		closeLogo: 'https://i.imgur.com/s96eWu3.png',
-	});
+<script type="text/javascript">
+	window.onload = function() {
+		flc.activate();
+		flc.initChat({
+			token: 'c1f3cf9fffdb06de01bfd97db86ec049a73b0a9b',
+			to: 'support:forsta.io',
+			userName: 'ChatUser',
+			openLogo: 'https://i.imgur.com/cir4X2q.png',
+			closeLogo: 'https://i.imgur.com/s96eWu3.png',
+		});
+	}
 </script>
