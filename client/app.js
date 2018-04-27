@@ -21,14 +21,14 @@ var flc = {};
 		jQuery('body').append('<style>.rotated-image {-webkit-transform: rotate(360deg);transform: rotate(360deg);transition-duration: .5s;}</style');
 		
 		jQuery(window).resize(() => { 
-			$('#forsta-chat-container').empty();
+			jQuery('#forsta-chat-container').empty();
 			flc.initChat() 
 		});
 		initChat();
 	}
 
 	function initChat() {
-		var isMobileDevice = jQuery(window).width() < 992;
+		var isMobileDevice = jQuery(window).width() < 768;
 		if(isMobileDevice) getMobileButton(flc.options);
 		else getDesktopButton(flc.options);
 	}
