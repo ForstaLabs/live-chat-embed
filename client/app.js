@@ -36,14 +36,14 @@ var flc = {};
 
 	function getMobileButton() {
 		jQuery('#forsta-chat-container').append('<a class="forsta-chat-btn" id="forsta-chat-mobile" href="'+buildFormUrl()+'" target="_blank></a>">');
-		jQuery('#forsta-chat-mobile').append('<img id="chat-open" width="50" src="../client/arrows.png">');
+		jQuery('#forsta-chat-mobile').append('<img id="chat-open" width="50" src="https://forsta-live-chat-embed.herokuapp.com/client/arrows.png">');
 	}
 
 	function getDesktopButton() {
 		jQuery('#forsta-chat-container').append('<iframe class="forsta-chat" id="forsta-chat" width="400" height="400" src="'+buildFormUrl()+'"></iframe>');
 		jQuery('#forsta-chat-container').append('<a class="forsta-chat-btn" id="forsta-chat-desktop"></a>');
-		jQuery('#forsta-chat-desktop').append('<img id="chat-open" width="50" src="../client/arrows.png">');
-		jQuery('#forsta-chat-desktop').append('<img id="chat-close" width="25" src="../client/close.png">');
+		jQuery('#forsta-chat-desktop').append('<img id="chat-open" width="50" src="https://forsta-live-chat-embed.herokuapp.com/client/arrows.png">');
+		jQuery('#forsta-chat-desktop').append('<img id="chat-close" width="25" src="https://forsta-live-chat-embed.herokuapp.com/client/close.png">');
 		
 		if(chatOpen){
 			jQuery('#chat-open').hide();
@@ -74,7 +74,7 @@ var flc = {};
 	}
 
 	function buildFormUrl() {
-		var result = '../client/chat.html' + '?';
+		var result = 'https://forsta-live-chat-embed.herokuapp.com/client/chat.html' + '?';
 		for(var key in flc.options.form) {
 			result += key + "=" + flc.options.form[key] + '&';
 		}
