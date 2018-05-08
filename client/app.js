@@ -4,7 +4,7 @@ var flc = {};
 	flc.activate = activate;
 	flc.initChat = initChat;
 	
-	var chatOpen = false;
+	var chatOpen = getCookie('chatOpen') === 'true';
 	var isMobileDevice = false;
 
 
@@ -17,14 +17,15 @@ var flc = {};
 		}
 
 		jQuery('body').append('<style>.forsta-chat {position: fixed;bottom: 90px;right: 90px;z-index: 1000;}</style>');
-		jQuery('body').append('<style>.forsta-chat-btn { position: fixed;bottom: 20px;right: 20px;z-index: 1000;cursor: pointer;outline: none;}</style');
+		jQuery('body').append('<style>#chat-open {margin-top: 20px;} #chat-close {margin-top: 25px;}</style>');
+		jQuery('body').append('<style>.forsta-chat-btn { position: fixed;bottom: 20px;right: 20px;z-index: 1000;cursor: pointer;outline: none; display:inline-block; background-color: '+flc.options.chatColor+'; width:75px; height:75px; border-radius: 50%; text-align: center;}</style');
 		jQuery('body').append('<style>.rotated-image {-webkit-transform: rotate(360deg);transform: rotate(360deg);transition-duration: .5s;}</style');
 		
 		jQuery(window).resize(() => { 
 			jQuery('#forsta-chat-container').empty();
 			flc.initChat() 
 		});
-		initChat();
+		flc.initChat();
 	}
 
 	function initChat() {
@@ -34,17 +35,22 @@ var flc = {};
 	}
 
 	function getMobileButton() {
-		jQuery('#forsta-chat-container').append('<a class="forsta-chat-btn" id="forsta-chat-mobile" href="'+flc.options.form+'" target="_blank></a>">');
-		jQuery('#forsta-chat-mobile').append('<img id="chat-open" width="50" src="'+flc.options.openLogo+'">');
+		jQuery('#forsta-chat-container').append('<a class="forsta-chat-btn" id="forsta-chat-mobile" href="'+buildFormUrl()+'" target="_blank></a>">');
+		jQuery('#forsta-chat-mobile').append('<img id="chat-open" width="50" src="../client/arrows.png">');
 	}
 
 	function getDesktopButton() {
-		jQuery('#forsta-chat-container').append('<iframe class="forsta-chat" id="forsta-chat" width="400" height="400" src="'+flc.options.form+'"></iframe>');
+		jQuery('#forsta-chat-container').append('<iframe class="forsta-chat" id="forsta-chat" width="400" height="400" src="'+buildFormUrl()+'"></iframe>');
 		jQuery('#forsta-chat-container').append('<a class="forsta-chat-btn" id="forsta-chat-desktop"></a>');
-		jQuery('#forsta-chat-desktop').append('<img id="chat-open" width="60" src="'+flc.options.openLogo+'">');
-		jQuery('#forsta-chat-desktop').append('<img id="chat-close" width="60" src="'+flc.options.closeLogo+'">');
-		jQuery('#forsta-chat').hide();
-		jQuery('#chat-close').hide();
+		jQuery('#forsta-chat-desktop').append('<img id="chat-open" width="50" src="../client/arrows.png">');
+		jQuery('#forsta-chat-desktop').append('<img id="chat-close" width="25" src="../client/close.png">');
+		
+		if(chatOpen){
+			jQuery('#chat-open').hide();
+		} else {
+			jQuery('#forsta-chat').hide();
+			jQuery('#chat-close').hide();
+		}
 		addDesktopBtnListener();
 	}
 
@@ -61,8 +67,40 @@ var flc = {};
 			}
 			jQuery('#forsta-chat').slideToggle( "slow", function() {
 				jQuery('#forsta-chat-desktop').removeClass("rotated-image");
-				chatOpen = !chatOpen;			
+				chatOpen = !chatOpen;		
+				setCookie('chatOpen', chatOpen, 1);
 			});
 		});
+	}
+
+	function buildFormUrl() {
+		var result = '../client/chat.html' + '?';
+		for(var key in flc.options.form) {
+			result += key + "=" + flc.options.form[key] + '&';
+		}
+		result = result.substring(0, result.length - 1);
+		return result;
+	}
+
+	function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
 	}
 })();

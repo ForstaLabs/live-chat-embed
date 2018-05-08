@@ -14,42 +14,37 @@
 		.forsta-mobile-banner h4 {
 			padding-top: 15px;
 		}
+		.btn.btn-primary {
+			background-color: #082c30;
+			border-color: #082c30;
+		}
 	</style>
 </head>
 <body>
 
-	<div class="container-fluid forsta-chat-form">
-		<div class="row forsta-mobile-banner">
-			<div class="col-2"><img src="https://i.imgur.com/cir4X2q.png" class="img-responsive" width="60"></div>
-			<div class="col-10">
-				<h4 class="text-white">Forsta Live Chat</h4>
+	<div class="container-fluid forsta-chat-form" id="chat-form">
+		<div class="row forsta-mobile-banner" id="title-background">
+			<div class="col-12">
+				<h4 id="title">Forsta Live Chat</h4>
 			</div>
 		</div>
 
 		<div class="form-group" style="margin-top: 10px;">
-			<lable>What is Your First Name?</lable>
-			<input type="text" class="form-control" id="user-first-name">
+			<lable>What is your name?</lable>
+			<input type="text" class="form-control" id="user-name">
 		</div>
 
 		<div class="form-group">
-			<lable>What is Your Last Name?</lable>
-			<input type="text" class="form-control" id="user-last-name">
-		</div>
-
-		<div class="form-group">
-			<lable>Who Would You Like to Talk To?</lable>
-			<select class="form-control" id="user-tag">
-				<option value="@sales:forsta.io">Sales</option>
-				<option value="@support:forsta.io">Support</option>
-			</select>
+			<lable>What can we help you with?</lable>
+			<textarea class="form-control"></textarea>
 		</div>
 
 		<div class="form-group text-right">
-			<button class="btn btn-primary" id="start-chat" style="background-color: #082c30; border-color: #082c30;">Start Chat</button>
+			<button class="btn btn-primary" id="start-chat">Start Chat</button>
 		</div>
 
 		<div class="form-group text-center">
-			<p>Forsta Live Chat uses end-to-end encryption to provide the highest level of data security.<br><a href="https://forsta.io/" target="_blank">Learn more</a></p>
+			<p>End-to-end encrypted messaging powered by <br><a href="https://forsta.io/" target="_blank">Forsta Live Chat</a></p>
 		</div>
 
 	</div>
@@ -57,6 +52,6 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://forsta-live-chat-embed.herokuapp.com/client/chat.js"></script>
+	<script src="../client/chat.js"></script>
 
 </body>
