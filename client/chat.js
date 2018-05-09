@@ -49,15 +49,16 @@
 
 	$('#start-chat').click(function() {
 		var name = $('#user-name').val();
+		var email = $('#user-email').val();
 		var tag = $('#user-tag').val();
-		var src = buildIframeSrc(options.token, name, options.tag);
+		var src = buildIframeSrc(options.token, name, email, options.tag);
 
 		window.location.href = src;
 		setCookie('src', src, 1);
 	});
 
-	function buildIframeSrc(token, name, tag) {
-		return "https://app.forsta.io/@embed?token="+token+"&first_name="+name+"&email=foo@bar.com&to="+tag+"&threadTitle="+name;
+	function buildIframeSrc(token, name, email, tag) {
+		return "https://app.forsta.io/@embed?token="+token+"&first_name="+name+"&email="+email+"&to="+tag+"&threadTitle="+name;
 	}
 
 	function setCookie(cname, cvalue, exdays) {
