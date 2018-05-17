@@ -58,7 +58,7 @@
 	});
 
 	function buildIframeSrc(token, name, email, tag) {
-		return "https://app.forsta.io/@embed?token="+token+"&first_name="+name+"&email="+email+"&to="+tag+"&threadTitle="+name;
+		return "https://app.forsta.io/@embed?token="+token+"&first_name="+name+"&email="+email+"&to="+tag+"&title="+name;
 	}
 
 	function setCookie(cname, cvalue, exdays) {
