@@ -20,7 +20,7 @@ var flc = {};
 		jQuery('body').append('<style>#chat-open {margin-top: 20px;} #chat-close {margin-top: 25px;}</style>');
 		jQuery('body').append('<style>.forsta-chat-btn { position: fixed;bottom: 20px;right: 20px;z-index: 1000;cursor: pointer;outline: none; display:inline-block; background-color: '+flc.options.chatColor+'; width:75px; height:75px; border-radius: 50%; text-align: center;}</style>');
 		jQuery('body').append('<style>.rotated-image {-webkit-transform: rotate(360deg);transform: rotate(360deg);transition-duration: .5s;}</style>');
-		jQuery('body').append('<style>#forsta-chat-header {position: fixed; bottom: 490px; right: 90px; z-index: 1000; height: 250px;width: 403px;background-image: url("../client/header.png");background-position: top center;background-size: cover;background-repeat: no-repeat;}</style>');
+		jQuery('body').append('<style>#forsta-chat-header {position: fixed; bottom: 490px; right: 90px; z-index: 1000; height: 250px;width: 403px;background-image: url("https://forsta-live-chat-embed.herokuapp.com/client/client/header.png");background-position: top center;background-size: cover;background-repeat: no-repeat;}</style>');
 
 		jQuery(window).resize(() => { 
 			jQuery('#forsta-chat-container').empty();
@@ -44,7 +44,7 @@ var flc = {};
 		jQuery('#forsta-chat-container').append('<div id="forsta-chat-header"></div>');
 		jQuery('#forsta-chat-container').append('<iframe class="forsta-chat" id="forsta-chat" width="400" height="400" src="'+buildFormUrl()+'"></iframe>');
 		jQuery('#forsta-chat-container').append('<a class="forsta-chat-btn" id="forsta-chat-desktop"></a>');
-		jQuery('#forsta-chat-desktop').append('<img id="chat-open" width="50" src="../client/logo.png">');
+		jQuery('#forsta-chat-desktop').append('<img id="chat-open" width="50" src="https://forsta-live-chat-embed.herokuapp.com/client/client/logo.png">');
 		jQuery('#forsta-chat-desktop').append('<img id="chat-close" width="25" src="https://forsta-live-chat-embed.herokuapp.com/client/close.png">');
 		
 		if(chatOpen){
@@ -89,7 +89,7 @@ var flc = {};
 	}
 
 	function buildFormUrl() {
-		var result = '../client/chat.html' + '?';
+		var result = 'https://forsta-live-chat-embed.herokuapp.com/client/client/chat.html' + '?';
 		for(var key in flc.options.form) {
 			result += key + "=" + flc.options.form[key] + '&';
 		}
