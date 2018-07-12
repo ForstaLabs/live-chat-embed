@@ -9,9 +9,6 @@
 		buttonColor: decodeURI($.urlParam('buttonColor')),
 		show: decodeURI($.urlParam('show')),
 		tag: decodeURI($.urlParam('tag')),
-		title: decodeURI($.urlParam('title')),
-		titleColor: decodeURI($.urlParam('titleColor')),
-		titleBackground: decodeURI($.urlParam('titleBackground')),
 		token: decodeURI($.urlParam('token'))
 	};
 
@@ -32,15 +29,6 @@
 		if(options.show === 'false') 
 			window.location.href = buildIframeSrc(options.token, 'Chat', options.tag);
 
-		if(options.title !== null) {
-			$('#title').text(options.title);
-		}
-		if(options.titleColor !== null) {
-			$('#title').css('color', options.titleColor);
-		}
-		if(options.titleBackground !== null) {
-			$('#title-background').css('background-color', options.titleBackground);
-		}
 		if(options.buttonColor !== null) {
 			$('#start-chat').css('background-color', options.buttonColor);
 			$('#start-chat').css('border-color', options.buttonColor);
