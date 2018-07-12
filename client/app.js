@@ -44,7 +44,7 @@ var flc = {};
 		jQuery('#forsta-chat-container').append('<div id="forsta-chat-header"></div>');
 		jQuery('#forsta-chat-container').append('<iframe class="forsta-chat" id="forsta-chat" width="400" height="400" src="'+buildFormUrl()+'"></iframe>');
 		jQuery('#forsta-chat-container').append('<a class="forsta-chat-btn" id="forsta-chat-desktop"></a>');
-		jQuery('#forsta-chat-desktop').append('<img id="chat-open" width="50" src="https://forsta-live-chat-embed.herokuapp.com/client/client/logo.png">');
+		jQuery('#forsta-chat-desktop').append('<img id="chat-open" width="50" src="https://forsta-live-chat-embed.herokuapp.com/client/logo.png">');
 		jQuery('#forsta-chat-desktop').append('<img id="chat-close" width="25" src="https://forsta-live-chat-embed.herokuapp.com/client/close.png">');
 		
 		if(chatOpen){
@@ -89,7 +89,7 @@ var flc = {};
 	}
 
 	function buildFormUrl() {
-		var result = 'https://forsta-live-chat-embed.herokuapp.com/client/client/chat.html' + '?';
+		var result = 'https://forsta-live-chat-embed.herokuapp.com/client/chat.html' + '?';
 		for(var key in flc.options.form) {
 			result += key + "=" + flc.options.form[key] + '&';
 		}
