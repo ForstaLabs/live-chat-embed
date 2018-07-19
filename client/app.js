@@ -20,7 +20,7 @@ var flc = {};
 		jQuery('body').append('<style>#chat-open {margin-top: 20px;} #chat-close {margin-top: 25px;}</style>');
 		jQuery('body').append('<style>.forsta-chat-btn { position: fixed;bottom: 20px;right: 20px;z-index: 1000;cursor: pointer;outline: none; display:inline-block; background-color: '+flc.options.chatColor+'; width:75px; height:75px; border-radius: 50%; text-align: center;}</style>');
 		jQuery('body').append('<style>.rotated-image {-webkit-transform: rotate(360deg);transform: rotate(360deg);transition-duration: .5s;}</style>');
-		jQuery('body').append('<style>#forsta-chat-header {position: fixed; bottom: 490px; right: 90px; z-index: 1000; height: 250px;width: 403px;background-image: url("https://forsta-live-chat-embed.herokuapp.com/client/header.png");background-position: top center;background-size: cover;background-repeat: no-repeat;}</style>');
+		jQuery('body').append('<style>#forsta-chat-header {position: fixed; bottom: 490px; right: 90px; z-index: 1000;width: 403px;height: 178px;background-image: url("https://forsta-live-chat-embed.herokuapp.com/client/header.png");background-position: top center;background-size: cover;background-repeat: no-repeat;}</style>');
 
 		jQuery(window).resize(() => { 
 			jQuery('#forsta-chat-container').empty();
