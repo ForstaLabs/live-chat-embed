@@ -46,7 +46,10 @@
 	});
 
 	function buildIframeSrc(token, name, email, tag) {
-		return "https://app.forsta.io/@embed?token="+token+"&first_name="+name+"&last_name="+"&email="+email+"&to="+tag+"&title=Live Chat-"+name;
+		const fullName = name.split(' ');
+		const firstName = fullName[0];
+		const lastName = fullName[fullName.length-1];
+		return "https://app.forsta.io/@embed?token="+token+"&first_name="+firstName+"&last_name="+lastName+"&email="+email+"&to="+tag+"&title=Live Chat-"+name;
 	}
 
 	function setCookie(cname, cvalue, exdays) {
