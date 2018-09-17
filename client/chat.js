@@ -9,7 +9,9 @@
 		buttonColor: decodeURI($.urlParam('buttonColor')),
 		show: decodeURI($.urlParam('show')),
 		tag: decodeURI($.urlParam('tag')),
-		token: decodeURI($.urlParam('token'))
+		token: decodeURI($.urlParam('token')),
+		allowCalling: decodeURI($.urlParam('allowCalling')),
+		forceScreenShare: decodeURI($.urlParam('forceScreenShare')),
 	};
 
 	activate();
@@ -39,17 +41,21 @@
 		var name = $('#user-name').val();
 		var email = $('#user-email').val();
 		var tag = $('#user-tag').val();
-		var src = buildIframeSrc(options.token, name, email, options.tag);
+		var src = buildIframeSrc(options.token, name, email, options.tag, options.allowCalling, options.forceScreenShare);
 
 		window.location.href = src;
 		setCookie('src', src, 1);
 	});
 
-	function buildIframeSrc(token, name, email, tag) {
+	function buildIframeSrc(token, name, email, tag, allowCalling, forceScreenShare) {
 		const fullName = name.split(' ');
 		const firstName = fullName[0];
 		const lastName = fullName[fullName.length-1];
-		return "https://app.forsta.io/@embed?token="+token+"&first_name="+firstName+"&last_name="+lastName+"&email="+email+"&to="+tag+"&title=Live Chat-"+name;
+
+		let iframeSrc = `https://app.forsta.io/@embed?token=${token}&first_name=${firstName}&last_name=${lastName}&email=${email}&to=${tag}&title=Live Chat-${name}`;
+		iframeSrc = allowCalling === 'true' ? `${iframeSrc}&allowCalling` : iframeSrc;
+		
+		return forceScreenShare === 'true' ? `${iframeSrc}&forceScreenShare` : iframeSrc;
 	}
 
 	function setCookie(cname, cvalue, exdays) {
