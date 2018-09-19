@@ -53,9 +53,11 @@
 		const lastName = fullName[fullName.length-1];
 
 		let iframeSrc = `https://app.forsta.io/@embed?token=${token}&first_name=${firstName}&last_name=${lastName}&email=${email}&to=${tag}&title=Live Chat-${name}`;
-		iframeSrc = allowCalling === 'true' ? `${iframeSrc}&allowCalling` : iframeSrc;
-		
-		return forceScreenShare === 'true' ? `${iframeSrc}&forceScreenShare` : iframeSrc;
+		if(allowCalling === 'true')
+			iframeSrc = `${iframeSrc}&allowCalling`;
+		if(forceScreenShare === 'true')
+			iframeSrc = `${iframeSrc}&forceScreenShare`;		
+		return iframeSrc;
 	}
 
 	function setCookie(cname, cvalue, exdays) {
