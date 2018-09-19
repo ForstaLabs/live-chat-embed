@@ -89,7 +89,7 @@ var flc = {};
 	}
 
 	function buildFormUrl() {
-		var result = 'https://forsta-live-chat-embed.herokuapp.com/client/chat.html' + '?';
+		var result = 'https://chat.forsta.io/client/chat.html' + '?';
 		for(var key in flc.options) {
 			result += key + "=" + flc.options[key] + '&';
 		}
