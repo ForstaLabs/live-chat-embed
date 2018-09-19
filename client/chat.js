@@ -7,7 +7,7 @@
 
 	var options = {
 		buttonColor: decodeURI($.urlParam('buttonColor')),
-		show: decodeURI($.urlParam('show')),
+		showHeader: decodeURI($.urlParam('showHeader')),
 		tag: decodeURI($.urlParam('tag')),
 		token: decodeURI($.urlParam('token')),
 		allowCalling: decodeURI($.urlParam('allowCalling')),
@@ -28,7 +28,7 @@
 			$('#chat-form').show();
 		}
 
-		if(options.show === 'false') 
+		if(options.showHeader === 'false') 
 			window.location.href = buildIframeSrc(options.token, 'Chat', options.tag);
 
 		if(options.buttonColor !== null) {
