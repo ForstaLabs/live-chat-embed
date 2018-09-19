@@ -91,9 +91,9 @@ var flc = {};
 
 	function buildIframeSrc(options) {
 		let iframeSrc = `https://app.forsta.io/@embed?token=${options.token}&to=${options.tag}&title=Live Chat`;
-		if(allowCalling === 'true')
+		if(options.allowCalling === 'true')
 			iframeSrc = `${iframeSrc}&allowCalling`;
-		if(forceScreenShare === 'true')
+		if(options.forceScreenShare === 'true')
 			iframeSrc = `${iframeSrc}&forceScreenShare`;		
 		return iframeSrc;
 	}
