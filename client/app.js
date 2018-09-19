@@ -42,7 +42,7 @@ var flc = {};
 
 	function getDesktopButton() {
 		jQuery('#forsta-chat-container').append('<div id="forsta-chat-header"></div>');
-		jQuery('#forsta-chat-container').append('<iframe class="forsta-chat" id="forsta-chat" width="400" height="400" src="'+buildFormUrl()+'" allow="camera; microphone"></iframe>');
+		jQuery('#forsta-chat-container').append('<iframe class="forsta-chat" id="forsta-chat" width="400" height="400" src="'+buildIframeSrc()+'" allow="camera; microphone"></iframe>');
 		jQuery('#forsta-chat-container').append('<a class="forsta-chat-btn" id="forsta-chat-desktop"></a>');
 		jQuery('#forsta-chat-desktop').append('<img id="chat-open" width="50" src="https://forsta-live-chat-embed.herokuapp.com/client/logo.png">');
 		jQuery('#forsta-chat-desktop').append('<img id="chat-close" width="25" src="https://forsta-live-chat-embed.herokuapp.com/client/close.png">');
@@ -88,13 +88,13 @@ var flc = {};
 		});
 	}
 
-	function buildFormUrl() {
-		var result = 'https://chat.forsta.io/client/chat.html' + '?';
-		for(var key in flc.options) {
-			result += key + "=" + flc.options[key] + '&';
-		}
-		result = result.substring(0, result.length - 1);
-		return result;
+	function buildIframeSrc() {
+		let iframeSrc = `https://app.forsta.io/@embed?token=${flc.options.token}&first_name=You&last_name=" "&to=${flc.options.tag}&title=Live Chat-You`;
+		if(flc.options.allowCalling === 'true')
+			iframeSrc = `${iframeSrc}&allowCalling`;
+		if(flc.options.forceScreenShare === 'true')
+			iframeSrc = `${iframeSrc}&forceScreenShare`;		
+		return iframeSrc;
 	}
 
 	function setCookie(cname, cvalue, exdays) {
