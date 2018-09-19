@@ -16,7 +16,7 @@ var flc = {};
 			jQuery(document.body).append('<div id="forsta-chat-container"></div>');
 		}
 
-		jQuery('body').append('<style>.forsta-chat {position: fixed;bottom: 90px;right: 90px;z-index: 1000;}</style>');
+		jQuery('body').append('<style>.forsta-chat {display: block; position: fixed;bottom: 90px;right: 90px;z-index: 1000;}</style>');
 		jQuery('body').append('<style>#chat-open {margin-top: 20px;} #chat-close {margin-top: 25px;}</style>');
 		jQuery('body').append('<style>.forsta-chat-btn { position: fixed;bottom: 20px;right: 20px;z-index: 1000;cursor: pointer;outline: none; display:inline-block; background-color: '+flc.options.chatColor+'; width:75px; height:75px; border-radius: 50%; text-align: center;}</style>');
 		jQuery('body').append('<style>.rotated-image {-webkit-transform: rotate(360deg);transform: rotate(360deg);transition-duration: .5s;}</style>');
