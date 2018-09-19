@@ -6,7 +6,7 @@
 	}
 
 	var options = {
-		buttonColor: decodeURI($.urlParam('buttonColor')),
+		color: decodeURI($.urlParam('color')),
 		showHeader: decodeURI($.urlParam('showHeader')),
 		tag: decodeURI($.urlParam('tag')),
 		token: decodeURI($.urlParam('token')),
@@ -31,9 +31,9 @@
 		if(options.showHeader === 'false') 
 			window.location.href = buildIframeSrc(options.token, 'Chat', options.tag);
 
-		if(options.buttonColor !== null) {
-			$('#start-chat').css('background-color', options.buttonColor);
-			$('#start-chat').css('border-color', options.buttonColor);
+		if(options.color !== null) {
+			$('#start-chat').css('background-color', options.color);
+			$('#start-chat').css('border-color', options.color);
 		}
 	}
 
