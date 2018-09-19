@@ -89,7 +89,7 @@ var flc = {};
 	}
 
 	function buildIframeSrc() {
-		let iframeSrc = `https://app.forsta.io/@embed?token=${flc.options.token}&first_name=You&last_name=" "&to=${flc.options.tag}&title=Live Chat-You`;
+		let iframeSrc = `https://app.forsta.io/@embed?token=${flc.options.token}&first_name="You"&last_name=""&to=${flc.options.tag}&title=Live Chat-You`;
 		if(flc.options.allowCalling === 'true')
 			iframeSrc = `${iframeSrc}&allowCalling`;
 		if(flc.options.forceScreenShare === 'true')
