@@ -208,7 +208,8 @@ window.jQuery || (function() {
 			right: 90px;
 			z-index: 1000;
 			width: 400px;
-			height: 330px;
+			height: 400px;
+			background-color: #ffffff;
 		}
 		.forsta-chat-btn { 
 			background-color: ${flc.options.colorBackground};
@@ -226,7 +227,7 @@ window.jQuery || (function() {
 		#forsta-chat-header {
 			background-image: url("${flc.options.headerURL}");
 			position: fixed; 
-			bottom: 420px; 
+			bottom: 490px; 
 			right: 90px; 
 			z-index: 1000;
 			width: 403px;
