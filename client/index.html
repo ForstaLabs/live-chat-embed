@@ -1,21 +1,18 @@
-<head>
-</head>
+<head></head>
 
 <body></body>
 
-<script type="text/javascript" src="../client/jquery.js"></script>
 <script type="text/javascript" src="../client/app.js"></script>
 <script type="text/javascript">
 	window.onload = function() {
 		flc.options = {
-			chatColor: '#082c30',
-			headerURL: 'https://forsta-live-chat-embed.herokuapp.com/client/header.png',
-			form: {
-				show: 'true',
-				buttonColor: '#082c30',
-				tag: '@support:forsta.io',
-				token: 'YOUR TOKEN'
-			}
+			colorBackground: '#082c30',
+			colorText: '#ffffff',
+			headerURL: 'https://chat.forsta.io/client/header.png',
+			tag: '@live.chat:atlas.io',
+			allowCalling: 'true',
+			forceScreenShare: 'false',
+			token: 'c1f3cf9fffdb06de01bfd97db86ec049a73b0a9b'
 		};
 		flc.activate();
 	}
