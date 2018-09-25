@@ -133,17 +133,17 @@ window.jQuery || (function() {
 			<form class="forsta-form" id="forsta-form">
 				<div class="forsta-form-group">
 					<label>First Name</label>
-					<input id="first-name" class="forsta-form-control" type="text" placeholder="Jane">
+					<input id="first-name" class="forsta-form-control" type="text">
 				</div>
 
 				<div class="forsta-form-group">
 					<label>Last Name</label>
-					<input id="last-name" class="forsta-form-control" type="text" placeholder="Doe">
+					<input id="last-name" class="forsta-form-control" type="text">
 				</div>
 
 				<div class="forsta-form-group">
 					<label>Email</label>
-					<input id="email"  class="forsta-form-control" type="email" placeholder="jdoe@gmail.com">
+					<input id="email"  class="forsta-form-control" type="email">
 				</div>
 
 				<input type="submit" class="forsta-btn-primary" value="Submit">
