@@ -172,7 +172,7 @@ window.jQuery || (function() {
 		var iframeSrc = getIframeSource(chatData);
 		var template = `
 		<a class="forsta-chat-btn" id="forsta-chat-mobile" href="${iframeSrc}" target="_blank>
-		<img id="chat-open" width="50" src="https://chat.forsta.io/client/logo.png">
+			<img width="50" src="https://chat.forsta.io/client/logo.png">
 		</a>
 		`;
 		jQuery('#forsta-chat-container').append(template);
