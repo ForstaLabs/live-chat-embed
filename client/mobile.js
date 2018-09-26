@@ -24,9 +24,9 @@
 			window.location.href = getCookie('src');
 		} else {
 			if(data.colorBackground !== null) {
-				$('#start-chat').css('background-color', data.colorBackground);
-				$('#start-chat').css('border-color', data.colorBackground);
-				$('#start-chat').css('color', data.colorText);
+				$('.forsta-btn-primary').css('background-color', data.colorBackground);
+				$('.forsta-btn-primary').css('border-color', data.colorBackground);
+				$('.forsta-btn-primary').css('color', data.colorText);
 			}
 			$('#forsta-form').show();			
 		}
