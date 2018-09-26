@@ -101,20 +101,24 @@ window.jQuery || (function() {
 	}
 
 	function getIframe(data) {
-		var iframeSrc = `
-			https://app.forsta.io/@embed?
-			token=${flc.options.token}&
-			first_name=${data.firstName}&
-			last_name=${data.lastName}&
-			email=${data.email}&
-			to=${flc.options.tag}&
-			title=Live Chat-${data.firstName}%20${data.lastName}
-		`;
+		var iframeSrc = getIframeSource(data);
 		if(flc.options.allowCalling === 'true')
 			iframeSrc = `${iframeSrc}&allowCalling`;
 		if(flc.options.forceScreenShare === 'true')
 			iframeSrc = `${iframeSrc}&forceScreenShare`;		
 		return `<iframe id="forsta-iframe" width="100%" height="100%" src="${iframeSrc}" allow="camera; microphone"></iframe>`;
+	}
+
+	function getIframeSource(data) {
+			return `
+				https://app.forsta.io/@embed?
+				token=${flc.options.token}&
+				first_name=${data.firstName}&
+				last_name=${data.lastName}&
+				email=${data.email}&
+				to=${flc.options.tag}&
+				title=Live Chat-${data.firstName}%20${data.lastName}
+			`;
 	}
 
 	function getDesktopButton() {
@@ -164,6 +168,7 @@ window.jQuery || (function() {
 	}
 
 	function getMobileButton() {
+		var iframeSrc = getIframeSource(chatData);
 		var template = `
 		<a class="forsta-chat-btn" id="forsta-chat-mobile" href="${iframeSrc}" target="_blank>
 		<img id="chat-open" width="50" src="https://chat.forsta.io/client/logo.png">
