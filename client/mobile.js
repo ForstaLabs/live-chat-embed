@@ -29,14 +29,15 @@
 				$('.forsta-btn-primary').css('border-color', data.colorBackground);
 				$('.forsta-btn-primary').css('color', data.colorText);
 			}
-			$('#forsta-form').show();			
+			$('#forsta-form').show();		
+			addFormListener();	
 		}
 	}
 
 	function addFormListener() {
 		$('#forsta-form').submit(event => {
 			event.preventDefault();
-			
+
 			data.firstName = event.target[0].value;
 			data.lastName = event.target[1].value;
 			data.email = event.target[2].value;
