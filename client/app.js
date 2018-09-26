@@ -101,16 +101,12 @@ window.jQuery || (function() {
 	}
 
 	function getIframe(data) {
-		var iframeSrc = getIframeSource(data);
-		if(flc.options.allowCalling === 'true')
-			iframeSrc = `${iframeSrc}&allowCalling`;
-		if(flc.options.forceScreenShare === 'true')
-			iframeSrc = `${iframeSrc}&forceScreenShare`;		
+		var iframeSrc = getIframeSource(data);		
 		return `<iframe id="forsta-iframe" width="100%" height="100%" src="${iframeSrc}" allow="camera; microphone"></iframe>`;
 	}
 
 	function getIframeSource(data) {
-			return `
+			var iframeSrc = `
 				https://app.forsta.io/@embed?
 				token=${flc.options.token}&
 				first_name=${data.firstName}&
@@ -119,6 +115,11 @@ window.jQuery || (function() {
 				to=${flc.options.tag}&
 				title=Live Chat-${data.firstName}%20${data.lastName}
 			`;
+			if(flc.options.allowCalling === 'true')
+				iframeSrc = `${iframeSrc}&allowCalling`;
+			if(flc.options.forceScreenShare === 'true')
+				iframeSrc = `${iframeSrc}&forceScreenShare`;
+			return iframeSrc;			
 	}
 
 	function getDesktopButton() {
