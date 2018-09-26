@@ -23,10 +23,10 @@
 		if(getCookie('src')) {
 			window.location.href = getCookie('src');
 		} else {
-			if(options.colorBackground !== null) {
-				$('#start-chat').css('background-color', options.colorBackground);
-				$('#start-chat').css('border-color', options.colorBackground);
-				$('#start-chat').css('color', options.colorText);
+			if(data.colorBackground !== null) {
+				$('#start-chat').css('background-color', data.colorBackground);
+				$('#start-chat').css('border-color', data.colorBackground);
+				$('#start-chat').css('color', data.colorText);
 			}
 			$('#forsta-form').show();			
 		}
