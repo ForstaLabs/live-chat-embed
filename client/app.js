@@ -186,7 +186,7 @@ window.jQuery || (function() {
 			allowCalling=${flc.options.allowCalling}&
 			colorText=${flc.options.colorText}&
 			token=${flc.options.token}&
-			tag=${flc.options.tag}&
+			tag=${flc.options.tag}
 		`;
 	}
 

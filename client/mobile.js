@@ -40,6 +40,7 @@
 			data.email = event.target[2].value;
 
 			var src = buildSrc(data);
+			console.log(src);
 			window.location.href = src;
 			setCookie('src', src, 1);
 		});
