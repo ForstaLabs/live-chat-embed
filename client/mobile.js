@@ -34,9 +34,9 @@
 
 	function addFormListener() {
 		$('#forsta-form').submit(event => {
-			data.firstName: event.target[0].value,
-			data.lastName: event.target[1].value,
-			data.email: event.target[2].value,
+			data.firstName = event.target[0].value,
+			data.lastName = event.target[1].value,
+			data.email = event.target[2].value,
 			var src = buildSrc(data);
 			window.location.href = src;
 			setCookie('src', src, 1);
