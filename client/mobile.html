@@ -1,0 +1,51 @@
+<head>
+	<style>
+		.forsta-form {
+			margin: 20px 10px 10px 10px;
+		}
+		.forsta-form-group {
+			font-family: 'sans-serif';
+			margin-bottom: 20px;
+		}
+		.forsta-form-group label {
+			display: inline-block;
+			margin-bottom: .5rem;
+		}
+		.forsta-form-group .forsta-form-control {
+			display: block;
+			width: 100%;
+			padding: .375rem .75rem;
+			font-size: 1rem;
+			line-height: 1.5;
+			color: #495057;
+			background-color: #fff;
+			background-clip: padding-box;
+			border: 1px solid #ced4da;
+			border-radius: .25rem;
+			transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+		}
+	</style>
+</head>
+<body>
+	<form class="forsta-form" id="forsta-form">
+		<div class="forsta-form-group">
+			<label>First Name</label>
+			<input id="first-name" class="forsta-form-control" type="text">
+		</div>
+
+		<div class="forsta-form-group">
+			<label>Last Name</label>
+			<input id="last-name" class="forsta-form-control" type="text">
+		</div>
+
+		<div class="forsta-form-group">
+			<label>Email</label>
+			<input id="email"  class="forsta-form-control" type="email">
+		</div>
+
+		<input type="submit" class="forsta-btn-primary" value="Submit">
+	</form>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://chat.forsta.io/client/mobile.js"></script>
+</body>

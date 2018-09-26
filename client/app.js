@@ -169,13 +169,25 @@ window.jQuery || (function() {
 	}
 
 	function getMobileButton() {
-		var iframeSrc = getIframeSource(chatData);
+		var mobileSrc = getMobileSrc();
 		var template = `
-		<a class="forsta-chat-btn" id="forsta-chat-mobile" href="${iframeSrc}" target="_blank>
-			<img width="50" src="https://chat.forsta.io/client/logo.png">
+		<a class="forsta-chat-btn" id="forsta-chat-mobile" href="${mobileSrc}" target="_blank">
+			<img id="chat-open" width="50" src="https://chat.forsta.io/client/logo.png">
 		</a>
 		`;
 		jQuery('#forsta-chat-container').append(template);
+	}
+
+	function getMobileSrc() {
+		return `
+			https://chat.forsta.io/client/mobile.html?
+			forceScreenShare=${flc.options.forceScreenShare}&
+			colorBackground=${flc.options.colorBackground}&
+			allowCalling=${flc.options.allowCalling}&
+			colorText=${flc.options.colorText}&
+			token=${flc.options.token}&
+			tag=${flc.options.tag}&
+		`;
 	}
 
 	function getStyles() {
