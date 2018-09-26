@@ -70,6 +70,8 @@ window.jQuery || (function() {
 
 	function addFormListener() {
 		jQuery('#forsta-form').submit(event => {
+			event.preventDefault();
+			
 			var data = {
 				firstName: event.target[0].value,
 				lastName: event.target[1].value,
