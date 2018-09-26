@@ -135,7 +135,7 @@ window.jQuery || (function() {
 		`;
 
 		var form = `
-			<form class="forsta-form" idorsta-form">
+			<form class="forsta-form" id="forsta-form">
 				<div class="forsta-form-group">
 					<label>First Name</label>
 					<input id="first-name" class="forsta-form-control" type="text">
@@ -275,9 +275,13 @@ window.jQuery || (function() {
 	}
 
 	function initChat() {
+		var isMobileDevice = jQuery(window).width() < 992;
+		if(isMobileDevice) {
+			getMobileButton();
+		} else {
 			getDesktopButton();
 			addDesktopBtnListener();
-
+		}
 		addFormListener();
 	}
 
