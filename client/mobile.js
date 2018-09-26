@@ -59,9 +59,9 @@
 			to=${data.tag}&
 			title=Live Chat-${data.firstName}%20${data.lastName}
 		`;
-		if(allowCalling === 'true')
+		if(data.allowCalling === 'true')
 			src = `${src}&allowCalling`;
-		if(forceScreenShare === 'true')
+		if(data.forceScreenShare === 'true')
 			src = `${src}&forceScreenShare`;		
 		return src;
 	}
