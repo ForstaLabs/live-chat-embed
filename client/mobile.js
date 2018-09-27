@@ -51,7 +51,7 @@
 
 	function buildSrc(data) {
 		var src = `
-			https://app-dev.forsta.io/@embed?
+			https://app.forsta.io/@embed?
 			token=${data.token}&
 			first_name=${data.firstName}&
 			last_name=${data.lastName}&
