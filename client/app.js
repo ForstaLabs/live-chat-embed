@@ -71,7 +71,7 @@ window.jQuery || (function() {
 	function addFormListener() {
 		jQuery('#forsta-form').submit(event => {
 			event.preventDefault();
-			
+
 			var data = {
 				firstName: event.target[0].value,
 				lastName: event.target[1].value,
@@ -109,7 +109,7 @@ window.jQuery || (function() {
 
 	function getIframeSource(data) {
 			var iframeSrc = `
-				https://app.forsta.io/@embed?
+				https://app-dev.forsta.io/@embed?
 				token=${flc.options.token}&
 				first_name=${data.firstName}&
 				last_name=${data.lastName}&
