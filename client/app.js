@@ -30,10 +30,6 @@ window.jQuery || (function() {
 			jQuery(document.body).append('<div id="forsta-chat-container"></div>');
 		}
 		
-		jQuery(window).resize(() => { 
-			jQuery('#forsta-chat-container').empty();
-			flc.initChat() 
-		});
 		flc.initChat();
 	}
 
